@@ -28,7 +28,7 @@
     </div>
 
     <button id="download">다운로드</button>
-
+    <button id="delete">삭제하기</button>
     <script>
 
         async function numberFetch() {
@@ -48,6 +48,25 @@
         downDom.addEventListener("click", () => {
             numberFetch();
         });
+
+        async function deletenumberFetch(){
+            let response = await fetch("http://localhost:8080/number")
+            let responseParse = await response.json();
+
+            console.log(responseParse);
+            let pDoms = document.querySelectorAll("p");
+            for(let j of responseParse){
+                for(let i of pDoms){
+                    i.innerHTML == j;
+                    i.remove();
+                }
+            }
+        }
+
+        let deleteDom = document.querySelector("#delete");
+        deleteDom.addEventListener("click",()=>{
+            deletenumberFetch()
+        })
     </script>
 </body>
 
