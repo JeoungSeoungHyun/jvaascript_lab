@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .move{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>자바스크립트 공부하기 - 2단계</h1>
+    <hr/>
+    <button type="button" onclick="add(event)">덧셈</button>
+    <button id="sh">뺄셈</button>
+    <script>
+        // 자바스크립트 함수의 매개변수는 선언이 필요없다.
+        // 자바스크립트 함수의 return 있든 없든 신경안써도 된다.
+        function add(e){
+            console.log(e);
+            // console.log(n1+n2);
+        }
+        function minus(e){
+            console.log(e);
+            e.target.innerHTML = "뺄셈아님";
+            alert("빼기 함수가 실행되었습니다.")
+        }
+        // e.target.className = "move";
+        // e.target.disabled = true
+        let buttonDom = document.querySelector("#sh");
+        buttonDom.addEventListener("click",minus);
+    </script>
+</body>
+</html>
