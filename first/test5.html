@@ -33,8 +33,9 @@
 
         async function numberFetch() {
             let response = await fetch("http://localhost:8080/number"); // 10초
-            let responseParse = await response.json();
+            let responseParse = response.json();
 
+            console.log(response);
             let numberBoxDom = document.querySelector("#number-box");
             for (let i of responseParse) {
                 let pDom = document.createElement("p");
@@ -52,8 +53,8 @@
         async function deletenumberFetch(){
             let response = await fetch("http://localhost:8080/number")
             let responseParse = await response.json();
+            
 
-            console.log(responseParse);
             let pDoms = document.querySelectorAll("p");
             for(let j of responseParse){
                 for(let i of pDoms){
